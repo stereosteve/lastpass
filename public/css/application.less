@@ -1,18 +1,24 @@
 @import "public/css/utils";
 
-body {
+html, body {
   margin: 0;
   padding: 0;
-  background: #ccc;
-  font-family: verdana, arial;
+}
+
+body {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  background: #eeeeee;
+  color: #333333;
 }
 
 #topbar {
-  background: black;
+  .vbg-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
   h1 {
     color: white;
     margin: 0;
-    padding: 10px;
+    padding: 15px 10px;
   }
 }
 
@@ -26,27 +32,56 @@ body {
 }
 .panel {
   margin: 10px;
-  padding: 20px;
   background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .active {
-  background: #cfc;
+  background: #ffe;
 }
 
 /* Forms */
 .field {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  padding: 10px 20px;
   label {
-    width: 100px;
-    margin-right: 50px;
-    text-align: right;
-    float: left;
+    font-weight: bold;
+    display: block;
+  }
+  input[type="text"] {
+    width: 466px;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 1.4em;
+    border: 0;
+    outline: none;
+    padding: 6px;
+    border: 1px solid #999999;
+    .inset-box-shadow(0, 1px, 2px, rgba(0,0,0,0.2));
   }
 }
 
+.actions {
+  width: 480px;
+  padding: 20px;
+  text-align: right;
+}
+
+
 #sites {
 
+  .site-list {
+    .item {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .site-detail {
+    h2 {
+      background: #eef;
+      padding: 10px 20px;
+      margin: 0;
+    }
+  }
 
 }

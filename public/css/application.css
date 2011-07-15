@@ -3,19 +3,27 @@ Less CSS3 utils.
 */
 /* Vertical Background Gradient */
 /* Horizontal Background Gradient */
-body {
+html, body {
   margin: 0;
   padding: 0;
-  background: #ccc;
-  font-family: verdana, arial;
+}
+body {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  background: #eeeeee;
+  color: #333333;
 }
 #topbar {
-  background: black;
+  background: rgba(0, 0, 0, 0.7);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.9)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
 }
 #topbar h1 {
   color: white;
   margin: 0;
-  padding: 10px;
+  padding: 15px 10px;
 }
 .sidebar-wrapper {
   width: 20%;
@@ -27,20 +35,44 @@ body {
 }
 .panel {
   margin: 10px;
-  padding: 20px;
   background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .active {
-  background: #cfc;
+  background: #ffe;
 }
 /* Forms */
 .field {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .field label {
-  width: 100px;
-  margin-right: 50px;
+  font-weight: bold;
+  display: block;
+}
+.field input[type="text"] {
+  width: 466px;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  padding: 6px;
+  border: 1px solid #999999;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.actions {
+  width: 480px;
+  padding: 20px;
   text-align: right;
-  float: left;
+}
+#sites .site-list .item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#sites .site-detail h2 {
+  background: #eef;
+  padding: 10px 20px;
+  margin: 0;
 }
