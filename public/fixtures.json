@@ -1,0 +1,14 @@
+{
+  "sites": [
+      {
+          "id": 1
+        , "name": "Google"
+        , "url": "http://www.google.com"
+      }
+    , {
+          "id": 2
+        , "name": "Amazon"
+        , "url": "http://www.amazon.com"
+      }
+  ]
+}
