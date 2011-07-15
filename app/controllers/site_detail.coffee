@@ -11,13 +11,19 @@ module.exports = Spine.Controller.create
     @render()
 
   render: ->
-    html = require("views/sites/form")(@item)
+    return unless @current
+    html = require("views/sites/form")(@current)
     @el.html(html)
 
   onSubmit: (e) ->
     e.preventDefault()
+    return unless @current
     data = $("form.site").serializeForm()
-    @item.updateAttributes(data)
+    @current.updateAttributes(data)
     console.log(data)
-    console.log(@item)
+    console.log(@current)
+
+  active: (item) ->
+    @current = item if item
+    @render()
 

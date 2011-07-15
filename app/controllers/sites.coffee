@@ -14,11 +14,11 @@ module.exports = Spine.Controller.create
   init: ->
     @list = SiteList.init(el: @el)
     @list.bind 'change', @change
-    Site.bind 'refresh', @render
+    Site.bind 'refresh change', @render
 
   render: ->
     @list.render(Site.all())
 
   change: (item) ->
-    @trigger("change", item)
+    @trigger("detail", item)
 

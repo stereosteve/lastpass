@@ -7,10 +7,10 @@ module.exports = Spine.Controller.create
     "ul#siteList": "sites"
   init: ->
     @sites = Sites.init(el: @sites)
+    @detail = SiteDetail.init(el: $("#site-detail"))
 
-    @sites.bind "change", (item) =>
-      @siteDetail = SiteDetail.init(el: $("#site-detail"), item: item)
-      console.log('changed')
+    @sites.bind "detail", (item) =>
+      @detail.active(item)
     
     $.getJSON "fixtures.json", (data) ->
       Site.refresh(data.sites)
