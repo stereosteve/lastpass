@@ -4,21 +4,29 @@
           "id": 1
         , "name": "Google"
         , "url": "http://www.google.com"
+        , "username": "last.pass"
+        , "password": "jT9Ie2II"
       }
     , {
           "id": 2
         , "name": "Amazon"
         , "url": "http://www.amazon.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "K5AVDyrS"
       }
     , {
           "id": 3
         , "name": "AOL"
         , "url": "http://www.aol.com"
+        , "username": "lpass"
+        , "password": "P1eAoW04"
       }
     , {
           "id": 4
         , "name": "Visa"
         , "url": "http://www.visa.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "oW04P1eA"
       }
   ]
 }
