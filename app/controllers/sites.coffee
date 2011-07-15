@@ -40,11 +40,11 @@ module.exports = Spine.Controller.create
   proxied: ["render", "change"]
 
   init: ->
-    @list = SiteList.init(el: $('.sidebar'))
+    @list = SiteList.init(el: $('.site-list'))
     @list.bind 'change', @change
     Site.bind 'refresh change', @render
 
-    @detail = SiteDetail.init(el: $('.content'))
+    @detail = SiteDetail.init(el: $('.site-detail'))
 
 
   render: ->

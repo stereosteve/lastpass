@@ -9,3 +9,38 @@ body {
   background: #ccc;
   font-family: verdana, arial;
 }
+#topbar {
+  background: black;
+}
+#topbar h1 {
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
+.sidebar-wrapper {
+  width: 20%;
+  float: left;
+}
+.content-wrapper {
+  width: 80%;
+  float: right;
+}
+.panel {
+  margin: 10px;
+  padding: 20px;
+  background: white;
+}
+.active {
+  background: #cfc;
+}
+/* Forms */
+.field {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.field label {
+  width: 100px;
+  margin-right: 50px;
+  text-align: right;
+  float: left;
+}
