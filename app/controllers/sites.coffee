@@ -2,6 +2,7 @@ Site = require('models/site')
 
 
 SiteList = Spine.List.create
+  selectFirst: true
   template: (items) ->
     require("views/sites/list")(items)
 
@@ -19,5 +20,5 @@ module.exports = Spine.Controller.create
     @list.render(Site.all())
 
   change: (item) ->
-    console.log(item)
+    @trigger("change", item)
 

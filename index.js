@@ -18,6 +18,7 @@ var package = stitch.createPackage({
     __dirname + '/lib/json2.js',
     __dirname + '/lib/shim.js',
     __dirname + '/lib/jquery.js',
+    __dirname + '/lib/jquery.serializeForm.js',
     __dirname + '/lib/jquery.tmpl.js',
     __dirname + '/lib/spine.js',
     __dirname + '/lib/spine.tmpl.js',
