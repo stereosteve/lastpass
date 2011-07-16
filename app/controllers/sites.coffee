@@ -27,8 +27,10 @@ SiteDetail = Spine.Controller.create
     return unless @current
     data = $("form.site").serializeForm()
     @current.updateAttributes(data)
-    console.log(data)
-    console.log(@current)
+    errors = @current.validate()
+    console.log(errors)
+    #console.log(data)
+    #console.log(@current)
 
   active: (item) ->
     @current = item if item
@@ -43,6 +45,7 @@ module.exports = Spine.Controller.create
     @list = SiteList.init(el: $('.site-list'))
     @list.bind 'change', @change
     Site.bind 'refresh change', @render
+    Site.bind 'error', @error
 
     @detail = SiteDetail.init(el: $('.site-detail'))
 
@@ -52,4 +55,7 @@ module.exports = Spine.Controller.create
 
   change: (item) ->
     @detail.active(item)
+
+  error: (e) ->
+    console.log "ERROR"
 
