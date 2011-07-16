@@ -27,10 +27,15 @@ SiteDetail = Spine.Controller.create
     return unless @current
     data = $("form.site").serializeForm()
     @current.updateAttributes(data)
-    errors = @current.validate()
-    console.log(errors)
-    #console.log(data)
-    #console.log(@current)
+    if errors = @current.validate()
+      console.log(errors)
+      @showError(error) for error in errors
+
+  showError: (error) ->
+    field = error.field
+    message = error.message
+    $('.'+field).addClass('error')
+
 
   active: (item) ->
     @current = item if item

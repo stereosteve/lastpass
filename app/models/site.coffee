@@ -1,11 +1,14 @@
 Site = module.exports = Spine.Model.setup("Site", ["name", "url", "username", "password", "notes"])
 
 Site.include({
+  addError: (field, message) ->
+    @errors.push({field: field, message: message})
+
   validate: ->
-    errors = {}
+    @errors = []
     if not @name
-      errors['name'] = 'site name is required'
+      @addError('name', 'Name is required')
     if not @url
-      errors['url'] = 'site url is required'
-    return errors
+      @addError('url', 'URL is required')
+    @errors if @errors.length > 0
 })
