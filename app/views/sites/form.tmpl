@@ -4,21 +4,27 @@
   <div class='field name'>
     <label>Name</label>
     <input type='text' name='name' value="${name}" />
+    <span class='error-message'></span>
   </div>
 
   <div class='field url'>
     <label>URL</label>
     <input type='text' name='url' value='{{= url}}' />
+    <span class='error-message'></span>
   </div>
+
   <div class='field'>
     <label>Username</label>
     <input type='text' name='username' value='{{= username}}' />
   </div>
+
   <div class='field'>
     <label>Password</label>
     <input type='password' name='password' value='{{= password}}' />
   </div>
+
   <div class='actions'>
     <input type='submit' class='save' value='Save' />
   </div>
+
 </form>

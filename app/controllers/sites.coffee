@@ -13,7 +13,9 @@ SiteList = Spine.Controller.create
     @bind('change', @change)
 
   render: (items) ->
+    @el.html('')
     @el.append("<div class='site item' data-id='#{item.id}'>#{item.name}</div>") for item in items
+    @change(@current)
 
   change: (item) ->
     return unless item
@@ -56,8 +58,9 @@ SiteDetail = Spine.Controller.create
 
   showError: (error) ->
     field = error.field
-    message = error.message
-    $('.'+field).addClass('error')
+    el = $('.'+field)
+    el.addClass('error')
+    $('span.error-message', el).text(error.message)
 
 
   active: (item) ->
