@@ -64,7 +64,7 @@ body {
 }
 .error {
   background: #fcc;
-  border: 2px solid #f33;
+  border-bottom: 2px solid #f33;
 }
 .actions {
   width: 480px;
