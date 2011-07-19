@@ -1,10 +1,33 @@
 Site = require('models/site')
 
 
-SiteList = Spine.List.create
-  selectFirst: true
-  template: (items) ->
-    require("views/sites/list")(items)
+SiteList = Spine.Controller.create
+
+  events:
+    "click .item": "click"
+
+  proxied:
+    ['change']
+
+  init: ->
+    @bind('change', @change)
+
+  render: (items) ->
+    @el.append("<div class='site item' data-id='#{item.id}'>#{item.name}</div>") for item in items
+
+  change: (item) ->
+    return unless item
+    @current = item
+    @el.children().removeClass('active')
+    $(".site[data-id=#{item.id}]").addClass('active')
+
+  click: (e) ->
+    id = $(e.target).data('id')
+    item = Site.find(id)
+    @trigger('change', item)
+
+
+
 
 
 
