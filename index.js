@@ -12,8 +12,8 @@ stitch.compilers.tmpl = function(module, filename) {
   return module._compile(content, filename);
 };
 
-var package = stitch.createPackage({
-  paths: [__dirname + '/app'],
+var libs = stitch.createPackage({
+  paths: [],
   dependencies: [
     __dirname + '/lib/json2.js',
     __dirname + '/lib/shim.js',
@@ -30,6 +30,11 @@ var package = stitch.createPackage({
   ]
 });
 
+var package = stitch.createPackage({
+  paths: [__dirname + '/app'],
+  dependencies: []
+});
+
 var app = express.createServer();
 
 app.configure(function() {
@@ -37,6 +42,7 @@ app.configure(function() {
   app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.get('/libs.js', libs.createServer());
   app.get('/application.js', package.createServer());
 });
 
