@@ -18,7 +18,7 @@ Site.extend
   search: (term) ->
     pattern = new RegExp(term, 'i')
     @select (item) ->
-      pattern.test(item.name) or pattern.test(item.url) or pattern.test(item.username)
+      pattern.test(item.name) or pattern.test(item.url)
 
 
 

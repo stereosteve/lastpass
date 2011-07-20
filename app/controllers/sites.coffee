@@ -51,8 +51,11 @@ SiteDetail = Spine.Controller.create
   
 
 module.exports = Spine.Controller.create
+
+  elements:
+    "#site-search": "siteSearch"
   
-  proxied: ["render", "change", "selectGroup"]
+  proxied: ["render", "change", "search", "selectGroup"]
 
   init: ->
     @groups = GroupList.init(el: $('.group-list'))
@@ -67,6 +70,7 @@ module.exports = Spine.Controller.create
 
     @detail = SiteDetail.init(el: $('.site-detail'))
 
+    @siteSearch.bind("keyup", @search)
 
   render: ->
     @list.render(Site.sorted())
@@ -74,6 +78,12 @@ module.exports = Spine.Controller.create
 
   change: (item) ->
     @detail.active(item)
+
+  search: (ev) ->
+    term = @siteSearch.val()
+    sites = Site.search(term)
+    console.log(sites)
+    @list.render(sites)
 
   selectGroup: (item) ->
     sites = Site.filterGroupId(item.id)
