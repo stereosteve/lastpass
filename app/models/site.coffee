@@ -1,8 +1,8 @@
 Site = module.exports = Spine.Model.setup("Site", ["name", "url", "username", "password", "notes"])
 
 Site.extend
-  social: ->
-    (site for site in Site.all() when site.group == 1)
+  filterGroupId: (id) ->
+    (site for site in Site.all() when site.group == id)
 
   sort: ->
     @all().sort (a, b) ->

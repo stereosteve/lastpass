@@ -8,7 +8,6 @@ SiteList = Spine.List.create
     require("views/sites/list")(items)
 
 GroupList = Spine.List.create
-  selectFirst: true
   template: (items) ->
     require("views/sites/group-list")(items)
 
@@ -53,7 +52,7 @@ SiteDetail = Spine.Controller.create
 
 module.exports = Spine.Controller.create
   
-  proxied: ["render", "change"]
+  proxied: ["render", "change", "selectGroup"]
 
   init: ->
     @groups = GroupList.init(el: $('.group-list'))
@@ -77,7 +76,9 @@ module.exports = Spine.Controller.create
     @detail.active(item)
 
   selectGroup: (item) ->
-    console.log("group selected")
+    sites = Site.filterGroupId(item.id)
+    console.log(sites)
+    @list.render(sites)
 
   error: (e) ->
     console.log "ERROR"
