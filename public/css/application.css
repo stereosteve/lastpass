@@ -99,7 +99,9 @@ body {
   float: left;
 }
 .active {
+  background: #efefef;
   background: #ffe;
+  font-weight: bold;
 }
 /* Forms */
 .field {
@@ -131,20 +133,27 @@ body {
   padding: 20px;
   text-align: right;
 }
+#sites {
+  /* general */
+
+  /* specific */
+
+}
 #sites .item {
+  height: 30px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+#sites img.favicon {
+  margin: 5px 10px 0 0;
 }
 #sites .site-list {
   border: 1px solid #ccc;
   border-top: 0;
 }
-#sites .site-list img.favicon {
-  margin: 5px 10px 0 0;
-}
 #sites .site-detail h2 {
-  background: #efefef;
   border-bottom: 1px solid #ccc;
+  height: 30px;
   padding: 10px 20px;
   margin: 0;
 }

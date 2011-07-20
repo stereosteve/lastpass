@@ -25,3 +25,5 @@ Site.include
       @addError('url', 'URL is required')
     @errors if @errors.length > 0
 
+  favicon: ->
+    "/favicons/" + @name.toLowerCase() + ".png"
