@@ -48,7 +48,7 @@ body {
 #everything {
   width: 960px;
   margin: 20px auto;
-  border: 2px solid #333;
+  border: 2px solid #999;
   min-height: 1000px;
   background: white;
 }

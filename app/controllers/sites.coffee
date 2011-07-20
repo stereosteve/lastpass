@@ -2,37 +2,15 @@ Site = require('models/site')
 Group = require('models/group')
 
 
-SiteList = Spine.Controller.create
+SiteList = Spine.List.create
+  selectFirst: true
+  template: (items) ->
+    require("views/sites/list")(items)
 
-  events:
-    "click .item": "click"
-
-  proxied:
-    ['change']
-
-  init: ->
-    @bind('change', @change)
-
-  render: (items) ->
-    @el.html('')
-    @el.append("<div class='site item' data-id='#{item.id}'><img class='favicon' src='/favicons/#{item.name.toLowerCase()}.png' />#{item.name}</div>") for item in items
-    @change(@current)
-
-    if ( !@el.children(".active").length || !this.current )
-      @el.children(":first").click()
-
-  change: (item) ->
-    return unless item
-    @current = item
-    @el.children().removeClass('active')
-    $(".site[data-id=#{item.id}]").addClass('active')
-
-  click: (e) ->
-    id = $(e.target).data('id')
-    item = Site.find(id)
-    @trigger('change', item)
-
-
+GroupList = Spine.List.create
+  selectFirst: true
+  template: (items) ->
+    require("views/sites/group-list")(items)
 
 
 
@@ -71,13 +49,6 @@ SiteDetail = Spine.Controller.create
     @current = item if item
     @render()
 
-GroupList = Spine.Controller.create
-  init: ->
-    console.log "group list"
-
-  render: ->
-    @el.html('')
-    @el.append("<div class='group item'>#{group.name}</div>") for group in Group.all()
   
 
 module.exports = Spine.Controller.create
@@ -86,10 +57,12 @@ module.exports = Spine.Controller.create
 
   init: ->
     @groups = GroupList.init(el: $('.group-list'))
+    @groups.bind 'change', @selectGroup
     Group.bind 'refresh change', @render
 
     @list = SiteList.init(el: $('.site-list'))
     @list.bind 'change', @change
+
     Site.bind 'refresh change', @render
     Site.bind 'error', @error
 
@@ -102,6 +75,9 @@ module.exports = Spine.Controller.create
 
   change: (item) ->
     @detail.active(item)
+
+  selectGroup: (item) ->
+    console.log("group selected")
 
   error: (e) ->
     console.log "ERROR"
