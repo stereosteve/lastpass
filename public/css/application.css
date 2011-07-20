@@ -88,6 +88,11 @@ body {
 #topbar .sites {
   background-image: url('/icons/key.png');
 }
+.search-wrapper {
+  padding: 10px;
+  background: #efefef;
+  border-bottom: 1px solid #ccc;
+}
 .groups-wrapper {
   width: 200px;
   float: left;
