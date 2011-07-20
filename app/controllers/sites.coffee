@@ -69,7 +69,7 @@ module.exports = Spine.Controller.create
 
 
   render: ->
-    @list.render(Site.sort())
+    @list.render(Site.sorted())
     @groups.render(Group.all())
 
   change: (item) ->

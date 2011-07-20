@@ -54,18 +54,18 @@
       }
 
     , {
-          "id": 5
-        , "name": "Facebook"
-        , "group": 1
-        , "url": "http://www.facebook.com"
-        , "username": "last.pass@gmail.com"
-        , "password": "password"
-      }
-    , {
           "id": 6
         , "name": "Twitter"
         , "group": 1
         , "url": "http://www.twitter.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "password"
+      }
+    , {
+          "id": 5
+        , "name": "Facebook"
+        , "group": 1
+        , "url": "http://www.facebook.com"
         , "username": "last.pass@gmail.com"
         , "password": "password"
       }
