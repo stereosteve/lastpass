@@ -1,7 +1,8 @@
 @import "public/css/utils";
 
 html, body {
-  margin: 0;
+  height: 100%;
+  margin: 0 0 1px;
   padding: 0;
 }
 
@@ -15,10 +16,32 @@ body {
 
 #topbar {
   .vbg-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
   h1 {
     color: white;
     margin: 0;
     padding: 15px 10px;
+  }
+  .icon {
+    text-indent: -9999em;
+    width: 40px;
+    height: 40px;
+    display: block;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+  .settings {
+    background-image: url('/icons/settings.png');
+  }
+  .notes {
+    background-image: url('/icons/notes.png');
+  }
+  .sites {
+    background-image: url('/icons/key.png');
   }
 }
 
@@ -28,16 +51,15 @@ body {
 }
 .content-wrapper {
   width: 80%;
+  background: white;
   float: right;
 }
 .panel {
-  margin: 10px;
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .active {
   background: #ffe;
+  background: white;
 }
 
 /* Forms */
@@ -78,6 +100,9 @@ body {
     .item {
       padding: 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    img.favicon {
+      margin: 5px 10px 0 0;
     }
   }
 

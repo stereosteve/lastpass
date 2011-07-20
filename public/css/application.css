@@ -4,7 +4,8 @@ Less CSS3 utils.
 /* Vertical Background Gradient */
 /* Horizontal Background Gradient */
 html, body {
-  margin: 0;
+  height: 100%;
+  margin: 0 0 1px;
   padding: 0;
 }
 body {
@@ -19,11 +20,33 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.9)));
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
   background: linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
 }
 #topbar h1 {
   color: white;
   margin: 0;
   padding: 15px 10px;
+}
+#topbar .icon {
+  text-indent: -9999em;
+  width: 40px;
+  height: 40px;
+  display: block;
+  float: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+#topbar .settings {
+  background-image: url('/icons/settings.png');
+}
+#topbar .notes {
+  background-image: url('/icons/notes.png');
+}
+#topbar .sites {
+  background-image: url('/icons/key.png');
 }
 .sidebar-wrapper {
   width: 20%;
@@ -31,15 +54,12 @@ body {
 }
 .content-wrapper {
   width: 80%;
-  float: right;
-}
-.panel {
-  margin: 10px;
   background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  float: right;
 }
 .active {
   background: #ffe;
+  background: white;
 }
 /* Forms */
 .field {
@@ -74,6 +94,9 @@ body {
 #sites .site-list .item {
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#sites .site-list img.favicon {
+  margin: 5px 10px 0 0;
 }
 #sites .site-detail h2 {
   background: #eef;

@@ -14,7 +14,7 @@ SiteList = Spine.Controller.create
 
   render: (items) ->
     @el.html('')
-    @el.append("<div class='site item' data-id='#{item.id}'>#{item.name}</div>") for item in items
+    @el.append("<div class='site item' data-id='#{item.id}'><img class='favicon' src='/favicons/#{item.name.toLowerCase()}.png' />#{item.name}</div>") for item in items
     @change(@current)
 
   change: (item) ->
