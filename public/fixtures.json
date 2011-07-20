@@ -1,5 +1,20 @@
 {
-  "sites": [
+  "groups": [
+      {
+          "id": 1
+        , "name": "Social"
+        , "fgcolor": "white"
+        , "bgcolor": "red"
+      }
+    , {
+          "id": 2
+        , "name": "Finance"
+        , "fgcolor": "white"
+        , "bgcolor": "green"
+      }
+  ]
+
+  , "sites": [
       {
           "id": 1
         , "name": "Google"
@@ -24,9 +39,35 @@
     , {
           "id": 4
         , "name": "Visa"
+        , "group": 2
         , "url": "http://www.visa.com"
         , "username": "last.pass@gmail.com"
         , "password": "oW04P1eA"
+      }
+    , {
+          "id": 372148902173489
+        , "name": "PayPal"
+        , "group": 2
+        , "url": "http://www.paypal.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "oW04P1eA"
+      }
+
+    , {
+          "id": 5
+        , "name": "Facebook"
+        , "group": 1
+        , "url": "http://www.facebook.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "password"
+      }
+    , {
+          "id": 6
+        , "name": "Twitter"
+        , "group": 1
+        , "url": "http://www.twitter.com"
+        , "username": "last.pass@gmail.com"
+        , "password": "password"
       }
   ]
 }

@@ -1,4 +1,5 @@
 Site = require('models/site')
+Group = require('models/group')
 
 
 SiteList = Spine.Controller.create
@@ -67,12 +68,23 @@ SiteDetail = Spine.Controller.create
     @current = item if item
     @render()
 
+GroupList = Spine.Controller.create
+  init: ->
+    console.log "group list"
+
+  render: ->
+    @el.html('')
+    @el.append("<div>#{group.name}</div>") for group in Group.all()
+  
 
 module.exports = Spine.Controller.create
   
   proxied: ["render", "change"]
 
   init: ->
+    @groups = GroupList.init(el: $('.group-list'))
+    Group.bind 'refresh change', @render
+
     @list = SiteList.init(el: $('.site-list'))
     @list.bind 'change', @change
     Site.bind 'refresh change', @render
@@ -83,6 +95,7 @@ module.exports = Spine.Controller.create
 
   render: ->
     @list.render(Site.all())
+    @groups.render(Group.all())
 
   change: (item) ->
     @detail.active(item)
