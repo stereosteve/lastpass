@@ -16,9 +16,15 @@ Site.extend
       item.group == id
 
   search: (term) ->
-    pattern = new RegExp(term, 'i')
     @select (item) ->
-      pattern.test(item.name) or pattern.test(item.url)
+      item.search(term)
+
+  current: ->
+    @select (site) =>
+      return false if @currentSearch and !site.search(@currentSearch)
+      return false if @currentGroup and site.group != @currentGroup
+      true
+
 
 
 
@@ -36,3 +42,8 @@ Site.include
 
   favicon: ->
     "/favicons/" + @name.toLowerCase() + ".png"
+
+  search: (term) ->
+    pattern = new RegExp(term, 'i')
+    pattern.test(@name) or pattern.test(@url)
+

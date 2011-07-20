@@ -54,8 +54,9 @@ module.exports = Spine.Controller.create
 
   elements:
     "#site-search": "siteSearch"
+    "#clear-search": "clearSearch"
   
-  proxied: ["render", "change", "search", "selectGroup"]
+  proxied: ["render", "selectSite", "search", "selectGroup", "showAll"]
 
   init: ->
     @groups = GroupList.init(el: $('.group-list'))
@@ -63,7 +64,7 @@ module.exports = Spine.Controller.create
     Group.bind 'refresh change', @render
 
     @list = SiteList.init(el: $('.site-list'))
-    @list.bind 'change', @change
+    @list.bind 'change', @selectSite
 
     Site.bind 'refresh change', @render
     Site.bind 'error', @error
@@ -71,24 +72,28 @@ module.exports = Spine.Controller.create
     @detail = SiteDetail.init(el: $('.site-detail'))
 
     @siteSearch.bind("keyup", @search)
+    @clearSearch.bind("click", @showAll)
+
+  showAll: ->
+    console.log("show all")
+    Site.currentSearch = null
+    Site.currentGroup = null
+    @render()
 
   render: ->
-    @list.render(Site.sorted())
+    @list.render(Site.current())
     @groups.render(Group.all())
 
-  change: (item) ->
+  selectSite: (item) ->
     @detail.active(item)
 
   search: (ev) ->
-    term = @siteSearch.val()
-    sites = Site.search(term)
-    console.log(sites)
-    @list.render(sites)
+    Site.currentSearch = @siteSearch.val()
+    @render()
 
-  selectGroup: (item) ->
-    sites = Site.filterGroupId(item.id)
-    console.log(sites)
-    @list.render(sites)
+  selectGroup: (group) ->
+    Site.currentGroup = group.id
+    @render()
 
   error: (e) ->
     console.log "ERROR"
