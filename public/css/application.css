@@ -46,7 +46,7 @@ body {
   color: #333333;
 }
 #everything {
-  width: 1000px;
+  width: 960px;
   margin: 20px auto;
   border: 2px solid #333;
   min-height: 1000px;
@@ -85,12 +85,16 @@ body {
 #topbar .sites {
   background-image: url('/icons/key.png');
 }
-.sidebar-wrapper {
+.groups-wrapper {
   width: 200px;
   float: left;
 }
-.content-wrapper {
-  width: 520px;
+.sites-wrapper {
+  width: 200px;
+  float: left;
+}
+.detail-wrapper {
+  width: 560px;
   background: white;
   float: left;
 }
@@ -99,7 +103,7 @@ body {
 }
 /* Forms */
 .field {
-  padding: 10px 20px;
+  padding: 10px 30px;
 }
 .field label {
   font-weight: bold;
@@ -123,16 +127,17 @@ body {
   border-bottom: 2px solid #f33;
 }
 .actions {
-  width: 480px;
+  width: 500px;
   padding: 20px;
   text-align: right;
 }
-#sites .site-list {
-  border-right: 1px solid #ccc;
-}
-#sites .site-list .item {
+#sites .item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+#sites .site-list {
+  border: 1px solid #ccc;
+  border-top: 0;
 }
 #sites .site-list img.favicon {
   margin: 5px 10px 0 0;

@@ -77,7 +77,7 @@ GroupList = Spine.Controller.create
 
   render: ->
     @el.html('')
-    @el.append("<div>#{group.name}</div>") for group in Group.all()
+    @el.append("<div class='group item'>#{group.name}</div>") for group in Group.all()
   
 
 module.exports = Spine.Controller.create
