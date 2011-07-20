@@ -85,3 +85,25 @@ Less CSS3 utils.
 .inset-line(@opacity: 0.4, @size: 1px) {
   .inset-box-shadow(0, @size, 0, rgba(255, 255, 255, @opacity);
 }
+
+
+.clear {
+  clear: both;
+}
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+

@@ -1,5 +1,31 @@
 @import "public/css/utils";
 
+
+.clear {
+  clear: both;
+}
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+
+
+
+
+
 html, body {
   height: 100%;
   margin: 0 0 1px;
@@ -14,11 +40,19 @@ body {
   color: #333333;
 }
 
+#everything {
+  width: 1000px;
+  margin: 20px auto;
+  border: 2px solid #333;
+  min-height: 1000px;
+  background: white;
+}
+
 #topbar {
   .vbg-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
   background: white;
   border-bottom: 1px solid #ccc;
-  padding: 5px 10px;
+  padding: 15px 10px;
   h1 {
     color: white;
     margin: 0;
@@ -46,20 +80,19 @@ body {
 }
 
 .sidebar-wrapper {
-  width: 20%;
+  width: 200px;
   float: left;
 }
 .content-wrapper {
-  width: 80%;
+  width: 520px;
   background: white;
-  float: right;
+  float: left;
 }
 .panel {
 }
 
 .active {
   background: #ffe;
-  background: white;
 }
 
 /* Forms */
@@ -96,10 +129,13 @@ body {
 
 #sites {
 
+
+
   .site-list {
+    border-right: 1px solid #ccc;
     .item {
       padding: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #ccc;
     }
     img.favicon {
       margin: 5px 10px 0 0;
@@ -108,7 +144,8 @@ body {
 
   .site-detail {
     h2 {
-      background: #eef;
+      background: #efefef;
+      border-bottom: 1px solid #ccc;
       padding: 10px 20px;
       margin: 0;
     }
