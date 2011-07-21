@@ -1,4 +1,5 @@
 @import "public/css/utils";
+@import "public/css/_forms";
 
 @red: #d32d27;
 
@@ -38,72 +39,31 @@ body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.4em;
-  background: #eeeeee;
   color: #333333;
 }
 
-#everything {
-  width: 960px;
-  margin: 20px auto;
-  min-height: 1000px;
-  background: white;
-  .box-shadow();
-  border: 1px solid #333;
+
+.lane {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid #ccc;
 }
 
-#topbar {
-  .vbg-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-  background: white;
-  border-bottom: 1px solid #ccc;
-  padding: 15px 10px;
-  h1 {
-    color: white;
-    margin: 0;
-    padding: 15px 10px;
-  }
-  .icon {
-    text-indent: -9999em;
-    width: 40px;
-    height: 40px;
-    display: block;
-    float: left;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-right: 10px;
-  }
-  .settings {
-    background-image: url('/icons/settings.png');
-  }
-  .notes {
-    background-image: url('/icons/notes.png');
-  }
-  .sites {
-    background-image: url('/icons/key.png');
-  }
+#lane1 {
+  width: 299px;
 }
 
-.search-wrapper {
-  padding: 10px;
-  background: #efefef;
-  border-bottom: 1px solid #ccc;
+#lane2 {
+  width: 300px;
+  left: 300px;
 }
 
-.groups-wrapper {
-  width: 200px;
-  float: left;
+#lane3{
+  left: 600px;
+  border-right: 0;
 }
 
-.sites-wrapper {
-  width: 200px;
-  float: left;
-}
-.detail-wrapper {
-  width: 560px;
-  background: white;
-  float: left;
-}
-.panel {
-}
 
 .active {
   background: #efefef;
@@ -111,61 +71,24 @@ body {
   font-weight: bold;
 }
 
-/* Forms */
-.field {
-  padding: 10px 30px;
-  label {
-    font-weight: bold;
-    display: block;
-  }
-  input[type="text"], input[type="password"] {
-    width: 466px;
-    font-size: 16px;
-    font-family: inherit;
-    line-height: 1.4em;
-    border: 0;
-    outline: none;
-    padding: 6px;
-    border: 1px solid #999999;
-    .inset-box-shadow(0, 1px, 2px, rgba(0,0,0,0.2));
-  }
-}
-
-.error {
-  background: #fcc;
-  border-bottom: 2px solid #f33;
-}
-
-.actions {
-  width: 500px;
-  padding: 20px;
-  text-align: right;
-}
 
 
 #sites {
 
-  /* general */
-  .item {
-    height: 30px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  img.favicon {
-    margin: 5px 10px 0 0;
-  }
-
 
   .site-list {
-    border: 1px solid #ccc;
-    border-top: 0;
-    border-bottom: 0;
+    .item {
+      height: 30px;
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+    }
+    img.favicon {
+      margin: 5px 10px 0 0;
+    }
   }
 
-  /* specific */
   .site-detail {
     h2 {
-      border-bottom: 1px solid #ccc;
       padding: 20px 25px;
       margin: 0;
     }

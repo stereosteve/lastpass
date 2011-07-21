@@ -15,17 +15,26 @@
   </script>
 </head>
 <body>
-<div id='everything'>
-  <div id='topbar'>
-    <div style='float: right'>
-      <a href='#sites' class='sites icon'>Sites</a>
-      <a href='#notes' class='notes icon'>Notes</a>
-      <a href='#settings' class='settings icon'>Settings</a>
-    </div>
-    <img src='/LastPassLogo329x40.png' />
-  </div>
 
   <div id="sites">
+    <div id="lane1" class="lane">
+      <img src='/LastPassLogoThumb.png' />
+      <div class="group-list panel"></div>
+    </div>
+
+    <div id="lane2" class="lane">
+      <input id='site-search' type='text' name='site-search' />
+      <button id='clear-search'>X</button>
+      <div class="site-list panel"></div>
+    </div>
+
+    <div id="lane3" class="lane">
+      <div class="site-detail panel"></div>
+    </div>
+  </div>
+
+
+  <!--
     <div class="search-wrapper">
       Search: 
       <input id='site-search' type='text' name='site-search' />
@@ -41,9 +50,8 @@
       <div class="site-detail panel"></div>
     </div>
   </div>
+  -->
 
-<div class='clear'></div>
-</div>
 
 </body>
 </html>
