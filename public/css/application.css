@@ -81,15 +81,30 @@ body {
   border-right: 1px solid #ccc;
 }
 #lane1 {
-  width: 299px;
+  width: 190px;
+  background: #f7f7f7;
 }
 #lane2 {
   width: 300px;
-  left: 300px;
+  left: 191px;
 }
 #lane3 {
-  left: 600px;
+  left: 492px;
   border-right: 0;
+}
+#topbar {
+  border-bottom: 1px solid #333;
+  padding: 15px 12px;
+  height: 25px;
+}
+#topbar .menu {
+  float: right;
+}
+#topbar a, #topbar a:visited {
+  text-decoration: none;
+  color: #d32d27;
+  font-weight: bold;
+  margin: 0 1em;
 }
 .active {
   background: #efefef;
@@ -97,9 +112,12 @@ body {
   font-weight: bold;
 }
 #sites .site-list .item {
-  height: 30px;
   padding: 8px;
   border-bottom: 1px solid #ccc;
+}
+#sites .site-list .item .username {
+  margin-left: 30px;
+  font-style: italic;
 }
 #sites .site-list img.favicon {
   margin: 5px 10px 0 0;
@@ -107,4 +125,26 @@ body {
 #sites .site-detail h2 {
   padding: 20px 25px;
   margin: 0;
+}
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin: 1em 0;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+  padding: 0 1em;
+}
+.box {
+  margin: 1em;
+}
+.silk {
+  margin-right: 10px;
+}
+#site-search {
+  border: 1px solid #ccc;
+  padding: 5px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
 }

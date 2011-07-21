@@ -16,15 +16,34 @@
 </head>
 <body>
 
+  <div id='topbar'>
+    <div class='menu'>
+      <a href='#site-panel'>Sites</a>
+      <a href='#notes-panel'>Notes</a>
+      <a href='#account-panel'>Account</a>
+      <a href='#logout-panel'>Log Out</a>
+    </div>
+    <img src='/LastPassLogoThumb.png' />
+  </div>
+
   <div id="sites">
     <div id="lane1" class="lane">
-      <img src='/LastPassLogoThumb.png' />
-      <div class="group-list panel"></div>
+      <div class='pad'>
+
+        <div class='box'>
+          <input id='site-search' type='text' name='site-search' placeholder='Search' />
+        </div>
+
+        <div class='label'>Groups</div>
+        <div class='box'>
+          <div><img class='silk' src='/folder.png' /><a id='clear-search'>All Sites</a></div>
+          <div class="group-list panel"></div>
+        </div>
+
+      </div>
     </div>
 
     <div id="lane2" class="lane">
-      <input id='site-search' type='text' name='site-search' />
-      <button id='clear-search'>X</button>
       <div class="site-list panel"></div>
     </div>
 
