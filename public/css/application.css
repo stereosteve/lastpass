@@ -130,9 +130,6 @@ body {
   margin-bottom: 5px;
   font-weight: bold;
   margin: 1em 0;
-  border: 1px solid #ccc;
-  border-left: 0;
-  border-right: 0;
   padding: 0 1em;
 }
 .box {
