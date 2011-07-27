@@ -79,6 +79,8 @@ module.exports = Spine.Controller.create
     Site.currentSearch = null
     Site.currentGroup = null
     @render()
+    $(".group.item.active").removeClass('active')
+    $("#site-search").val('')
 
   render: ->
     @list.render(Site.current())
