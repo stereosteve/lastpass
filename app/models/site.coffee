@@ -41,7 +41,7 @@ Site.include
     @errors if @errors.length > 0
 
   favicon: ->
-    "/favicons/" + @name.toLowerCase() + ".png"
+    "/lastpass/favicons/" + @name.toLowerCase() + ".png"
 
   search: (term) ->
     pattern = new RegExp(term, 'i')

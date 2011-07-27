@@ -6,7 +6,7 @@ module.exports = Spine.Controller.create
   init: ->
     @sites = Sites.init(el: $("#sites"))
 
-    $.getJSON "fixtures.json", (data) ->
+    $.getJSON "/lastpass/fixtures.json", (data) ->
       Group.refresh(data.groups)
       Site.refresh(data.sites)
       console.log 'sites loaded: ' + Site.count()
