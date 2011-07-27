@@ -42,8 +42,8 @@ app.configure(function() {
   app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
-  app.get('/libs.js', libs.createServer());
-  app.get('/application.js', package.createServer());
+  app.get('/lastpass/libs.js', libs.createServer());
+  app.get('/lastpass/application.js', package.createServer());
 });
 
 var port = argv[0] || process.env.PORT || 9294;
