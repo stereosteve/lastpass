@@ -119,12 +119,14 @@ body {
   margin-left: 30px;
   font-style: italic;
 }
-#sites .site-list img.favicon {
-  margin: 5px 10px 0 0;
-}
 #sites .site-detail h2 {
   padding: 20px 25px;
   margin: 0;
+}
+#sites img.favicon {
+  margin: 5px 10px 0 0;
+  width: 16px;
+  height: 16px;
 }
 .label {
   margin-bottom: 5px;
