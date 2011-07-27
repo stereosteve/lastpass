@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Lastpass</title>
+  <link rel="stylesheet" href="/css/application.css" type="text/css" charset="utf-8">
+  <script src="/lastpass/libs.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/lastpass/application.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    var exports = this;
+    jQuery(function(){
+      var App = require("app");
+      exports.App = App.init({el: $("body")});      
+    });
+  </script>
+</head>
+<body>
+
+  <div id='topbar'>
+    <div class='menu'>
+      <a href='#site-panel'>Sites</a>
+      <a href='#notes-panel'>Notes</a>
+      <a href='#account-panel'>Account</a>
+      <a href='#logout-panel'>Log Out</a>
+    </div>
+    <img src='/LastPassLogoThumb.png' />
+  </div>
+
+  <div id="sites">
+    <div id="lane1" class="lane">
+      <div class='pad'>
+
+        <div class='box'>
+          <input id='site-search' type='text' name='site-search' placeholder='Search' />
+        </div>
+
+        <div class='label'>Groups</div>
+        <div class='box'>
+          <div><img class='silk' src='/folder.png' /><a id='clear-search'>All Sites</a></div>
+          <div class="group-list panel"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="lane2" class="lane">
+      <div class="site-list panel"></div>
+    </div>
+
+    <div id="lane3" class="lane">
+      <div class="site-detail panel"></div>
+    </div>
+  </div>
+
+
+  <!--
+    <div class="search-wrapper">
+      Search: 
+      <input id='site-search' type='text' name='site-search' />
+      <button id='clear-search'>X</button>
+    </div>
+    <div class="groups-wrapper">
+      <div class="group-list panel"></div>
+    </div>
+    <div class="sites-wrapper">
+      <div class="site-list panel"></div>
+    </div>
+    <div class="detail-wrapper">
+      <div class="site-detail panel"></div>
+    </div>
+  </div>
+  -->
+
+
+</body>
+</html>
