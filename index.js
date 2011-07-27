@@ -41,9 +41,9 @@ app.configure(function() {
   app.set('views', __dirname + '/views');
   app.use(express.compiler({ src: __dirname + '/public/lastpass', enable: ['less'] }));
   app.use(app.router);
+  app.get('/lastpass/js/libs.js', libs.createServer());
+  app.get('/lastpass/js/app.js', package.createServer());
   app.use(express.static(__dirname + '/public'));
-  app.get('/lastpass/libs.js', libs.createServer());
-  app.get('/lastpass/application.js', package.createServer());
 });
 
 var port = argv[0] || process.env.PORT || 9294;
